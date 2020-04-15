@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -17,6 +18,10 @@ module.exports = {
                         loader: "html-loader"
                     }
                 ]
+            },
+            {
+                test: /\.(css|less)$/,
+                use: ["style-loader", "css-loader"]
             }
         ]
     },
